@@ -1,0 +1,289 @@
+npm notice run cpgai@0.1.0 npx
+npm notice run next start -H 0.0.0.0 -p 3000
+▲ Next.js 16.3.1
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 139ms
+✓ Running next.config.ts took 35ms
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956915.png
+SAVED_FILE /api/media/generated/img-1789903956915.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956917.png
+SAVED_FILE /api/media/generated/img-1789903956917.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956919.png
+SAVED_FILE /api/media/generated/img-1789903956919.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956920.png
+SAVED_FILE /api/media/generated/img-1789903956920.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956922.png
+SAVED_FILE /api/media/generated/img-1789903956922.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956923.png
+SAVED_FILE /api/media/generated/img-1789903956923.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956925.png
+SAVED_FILE /api/media/generated/img-1789903956925.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789903956926.png
+SAVED_FILE /api/media/generated/img-1789903956926.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'عکس ببین قسمت بالا سمت چپ خط دوم نوشته شرکت مهر ',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit این عکس رو ببین، قسمت بالا سمت چپ، خط دوم نوشته: " شرکت مهر پرتو تارا (میتا)؛ ای
+CHAT_PROVIDER avalai image-edit
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904013512.png
+SAVED_FILE /api/media/generated/img-1789904013512.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789904013512.png
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014118.png
+SAVED_FILE /api/media/generated/img-1789904014118.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014119.png
+SAVED_FILE /api/media/generated/img-1789904014119.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014119.png
+SAVED_FILE /api/media/generated/img-1789904014119.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014120.png
+SAVED_FILE /api/media/generated/img-1789904014120.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014120.png
+SAVED_FILE /api/media/generated/img-1789904014120.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014121.png
+SAVED_FILE /api/media/generated/img-1789904014121.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014121.png
+SAVED_FILE /api/media/generated/img-1789904014121.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904014122.png
+SAVED_FILE /api/media/generated/img-1789904014122.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'دمت گرم',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+CHAT_ONCE { deepen: false, web: false, tokens: 4000, stream: true }
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096087.png
+SAVED_FILE /api/media/generated/img-1789904096087.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096088.png
+SAVED_FILE /api/media/generated/img-1789904096088.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096089.png
+SAVED_FILE /api/media/generated/img-1789904096089.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096090.png
+SAVED_FILE /api/media/generated/img-1789904096090.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096091.png
+SAVED_FILE /api/media/generated/img-1789904096091.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096092.png
+SAVED_FILE /api/media/generated/img-1789904096092.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096093.png
+SAVED_FILE /api/media/generated/img-1789904096093.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904096093.png
+SAVED_FILE /api/media/generated/img-1789904096093.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103715.png
+SAVED_FILE /api/media/generated/img-1789904103715.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103716.png
+SAVED_FILE /api/media/generated/img-1789904103716.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103717.png
+SAVED_FILE /api/media/generated/img-1789904103717.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103717.png
+SAVED_FILE /api/media/generated/img-1789904103717.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103718.png
+SAVED_FILE /api/media/generated/img-1789904103718.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103718.png
+SAVED_FILE /api/media/generated/img-1789904103718.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103719.png
+SAVED_FILE /api/media/generated/img-1789904103719.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904103720.png
+SAVED_FILE /api/media/generated/img-1789904103720.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'خط اول داخل پرانتز میتا بکن مپتا',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit خط اول داخل پرانتز میتا رو بکن مپتا
+CHAT_PROVIDER avalai image-edit
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319620.png
+SAVED_FILE /api/media/generated/img-1789904319620.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319621.png
+SAVED_FILE /api/media/generated/img-1789904319621.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319621.png
+SAVED_FILE /api/media/generated/img-1789904319621.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319622.png
+SAVED_FILE /api/media/generated/img-1789904319622.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319623.png
+SAVED_FILE /api/media/generated/img-1789904319623.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319623.png
+SAVED_FILE /api/media/generated/img-1789904319623.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319624.png
+SAVED_FILE /api/media/generated/img-1789904319624.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904319625.png
+SAVED_FILE /api/media/generated/img-1789904319625.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384288.png
+SAVED_FILE /api/media/generated/img-1789904384288.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789904384288.png
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384888.png
+SAVED_FILE /api/media/generated/img-1789904384888.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384889.png
+SAVED_FILE /api/media/generated/img-1789904384889.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384889.png
+SAVED_FILE /api/media/generated/img-1789904384889.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384890.png
+SAVED_FILE /api/media/generated/img-1789904384890.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384890.png
+SAVED_FILE /api/media/generated/img-1789904384890.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384891.png
+SAVED_FILE /api/media/generated/img-1789904384891.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384892.png
+SAVED_FILE /api/media/generated/img-1789904384892.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904384893.png
+SAVED_FILE /api/media/generated/img-1789904384893.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'میتا',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit هنوز میتا هست ببین قرمز نوشته "میتا" همون رو بدون تغییر دیگه ای بکن "مپتا"
+CHAT_PROVIDER avalai image-edit
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441928.png
+SAVED_FILE /api/media/generated/img-1789904441928.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441928.png
+SAVED_FILE /api/media/generated/img-1789904441928.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441929.png
+SAVED_FILE /api/media/generated/img-1789904441929.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441930.png
+SAVED_FILE /api/media/generated/img-1789904441930.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441931.png
+SAVED_FILE /api/media/generated/img-1789904441931.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441931.png
+SAVED_FILE /api/media/generated/img-1789904441931.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441932.png
+SAVED_FILE /api/media/generated/img-1789904441932.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904441933.png
+SAVED_FILE /api/media/generated/img-1789904441933.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493057.png
+SAVED_FILE /api/media/generated/img-1789904493057.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789904493057.png
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493709.png
+SAVED_FILE /api/media/generated/img-1789904493709.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493709.png
+SAVED_FILE /api/media/generated/img-1789904493709.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493710.png
+SAVED_FILE /api/media/generated/img-1789904493710.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493711.png
+SAVED_FILE /api/media/generated/img-1789904493711.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493711.png
+SAVED_FILE /api/media/generated/img-1789904493711.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493712.png
+SAVED_FILE /api/media/generated/img-1789904493712.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493713.png
+SAVED_FILE /api/media/generated/img-1789904493713.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904493713.png
+SAVED_FILE /api/media/generated/img-1789904493713.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'نشد',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+CHAT_ONCE { deepen: false, web: false, tokens: 4000, stream: true }
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506242.png
+SAVED_FILE /api/media/generated/img-1789904506242.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506243.png
+SAVED_FILE /api/media/generated/img-1789904506243.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506246.png
+SAVED_FILE /api/media/generated/img-1789904506246.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506247.png
+SAVED_FILE /api/media/generated/img-1789904506247.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506247.png
+SAVED_FILE /api/media/generated/img-1789904506247.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506247.png
+SAVED_FILE /api/media/generated/img-1789904506247.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506248.png
+SAVED_FILE /api/media/generated/img-1789904506248.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904506248.png
+SAVED_FILE /api/media/generated/img-1789904506248.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517666.png
+SAVED_FILE /api/media/generated/img-1789904517666.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517667.png
+SAVED_FILE /api/media/generated/img-1789904517667.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517667.png
+SAVED_FILE /api/media/generated/img-1789904517667.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517668.png
+SAVED_FILE /api/media/generated/img-1789904517668.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517668.png
+SAVED_FILE /api/media/generated/img-1789904517668.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517668.png
+SAVED_FILE /api/media/generated/img-1789904517668.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517669.png
+SAVED_FILE /api/media/generated/img-1789904517669.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904517669.png
+SAVED_FILE /api/media/generated/img-1789904517669.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'کمی قبل کار کردی. کلمه ی میتا بکن مپتا هیچ تغییر',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit یه کمی قبل این کار رو کردی. فقط کلمه ی میتا رو بکن مپتا همین هیچ تغییر دیگه  ای 
+CHAT_PROVIDER avalai image-edit
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665050.png
+SAVED_FILE /api/media/generated/img-1789904665050.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665050.png
+SAVED_FILE /api/media/generated/img-1789904665050.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665051.png
+SAVED_FILE /api/media/generated/img-1789904665051.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665051.png
+SAVED_FILE /api/media/generated/img-1789904665051.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665052.png
+SAVED_FILE /api/media/generated/img-1789904665052.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665052.png
+SAVED_FILE /api/media/generated/img-1789904665052.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665053.png
+SAVED_FILE /api/media/generated/img-1789904665053.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665053.png
+SAVED_FILE /api/media/generated/img-1789904665053.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665054.png
+SAVED_FILE /api/media/generated/img-1789904665054.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904665054.png
+SAVED_FILE /api/media/generated/img-1789904665054.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721357.png
+SAVED_FILE /api/media/generated/img-1789904721357.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789904721357.png
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721991.png
+SAVED_FILE /api/media/generated/img-1789904721991.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721992.png
+SAVED_FILE /api/media/generated/img-1789904721992.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721992.png
+SAVED_FILE /api/media/generated/img-1789904721992.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721993.png
+SAVED_FILE /api/media/generated/img-1789904721993.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721993.png
+SAVED_FILE /api/media/generated/img-1789904721993.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721994.png
+SAVED_FILE /api/media/generated/img-1789904721994.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721994.png
+SAVED_FILE /api/media/generated/img-1789904721994.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721995.png
+SAVED_FILE /api/media/generated/img-1789904721995.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721995.png
+SAVED_FILE /api/media/generated/img-1789904721995.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789904721995.png
+SAVED_FILE /api/media/generated/img-1789904721995.png true

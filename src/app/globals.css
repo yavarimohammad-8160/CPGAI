@@ -12,15 +12,284 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background: #eef3f8;
+  color: #0f2744;
+}
+
+.cpg-bg {
+  background:
+    radial-gradient(circle at top left, #d8e8f6, transparent 30%),
+    radial-gradient(circle at bottom right, #c9dcec, transparent 28%),
+    #eef3f8;
+}
+
+html.dark {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #171717;
+  --card: #111111;
+  --border: #333333;
+  --muted-foreground: #a3a3a3;
+}
+
+html.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html.dark .cpg-bg {
+  background: var(--background);
+}
+
+html.dark .bg-white {
+  background-color: var(--card);
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-\[\#eef3f8\] {
+  background-color: var(--surface);
+}
+
+html.dark .text-\[\#0f2744\] {
+  color: var(--foreground);
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+  color: var(--muted-foreground);
+}
+
+html.dark .border-slate-200 {
+  border-color: var(--border);
+}
+
+html.dark input:not([type="file"]),
+html.dark select,
+html.dark textarea {
+  background-color: var(--surface);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+html.dark .hover\:bg-slate-50:hover {
+  background-color: var(--surface);
+}
+
+.cpgai-spin {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c5d4e4;
+  border-top-color: #0f2744;
+  border-radius: 50%;
+  animation: cpgai-spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cpgai-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cpgai-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-right: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: cpgai-caret 1s steps(1) infinite;
+}
+
+@keyframes cpgai-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cpgai-logo {
+  background-color: #ffffff;
+}
+
+html.dark .cpgai-logo {
+  background-color: #ffffff;
+}
+
+.chat-rich {
+  direction: rtl;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.chat-rich p {
+  margin: 0.35em 0;
+}
+
+.chat-rich p:first-child {
+  margin-top: 0;
+}
+
+.chat-rich p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-rich ul,
+.chat-rich ol {
+  margin: 0.4em 0;
+  padding-right: 1.2em;
+  padding-left: 0;
+}
+
+.chat-rich li {
+  margin: 0.15em 0;
+}
+
+.chat-rich .katex-display {
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.chat-box {
+  display: block;
+  direction: ltr;
+  text-align: left;
+  margin: 0.65rem 0;
+  border-radius: 1rem;
+  border: 1px solid #d7e2ee;
+  background: #f7fafc;
+  overflow: hidden;
+}
+
+.chat-md-p {
+  margin: 0.55rem 0;
+}
+
+.chat-copybar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  background: #edf3f8;
+  border-bottom: 1px solid #d7e2ee;
+}
+
+.chat-copybar-label {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.chat-copy-btn {
+  font-size: 11px;
+  color: #0f2744;
+  background: #fff;
+  border: 1px solid #d7e2ee;
+  border-radius: 0.6rem;
+  padding: 0.15rem 0.55rem;
+}
+
+.chat-box-body {
+  display: block;
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chat-formula-body {
+  font-size: 1.05rem;
+}
+
+.chat-code-body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+.chat-code-body code {
+  font-family: inherit;
+}
+
+.chat-formula-inline {
+  display: inline-block;
+  direction: ltr;
+  margin: 0 0.15em;
+  padding: 0.05em 0.25em;
+  border-radius: 0.4rem;
+  background: #f1f5f9;
+  vertical-align: middle;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.chat-inline-code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: #f1f5f9;
+  border-radius: 0.45rem;
+  padding: 0.05em 0.35em;
+}
+
+html.dark .chat-box {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+html.dark .chat-copybar {
+  background: var(--surface);
+  border-bottom-color: var(--border);
+}
+
+html.dark .chat-copybar-label {
+  color: var(--muted-foreground);
+}
+
+html.dark .chat-copy-btn {
+  color: var(--foreground);
+  background: var(--card);
+  border-color: var(--border);
+}
+
+html.dark .chat-formula-inline,
+html.dark .chat-inline-code {
+  background: var(--surface);
+}
+
+html.dark .bg-\[\#0f2744\] {
+  background-color: #303030;
+}
+
+html.dark .hover\:bg-white:hover {
+  background-color: #262626;
+}
+
+html.dark .border,
+html.dark .border-b,
+html.dark .border-t {
+  border-color: var(--border);
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+html.dark .cpgai-spin {
+  border-color: var(--border);
+  border-top-color: var(--foreground);
 }

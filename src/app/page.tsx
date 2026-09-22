@@ -1,69 +1,196 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { BrandMark } from "@/components/brand-mark";
+import { InstallAppButton } from "@/components/install-app";
+
+export default function LoginPage() {
+  const router = useRouter();
+  const otpRef = useRef<HTMLInputElement>(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
+  const [needs2FA, setNeeds2FA] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("cpgai-user")) {
+      router.replace("/chat");
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (needs2FA) otpRef.current?.focus();
+  }, [needs2FA]);
+
+  function finishLogin(data: { username: string; role: string; name?: string }) {
+    const name = String(data.name || "").trim();
+    localStorage.setItem("cpgai-user", data.username);
+    localStorage.setItem("cpgai-role", data.role);
+    localStorage.setItem("cpgai-name", name || data.username);
+    router.push("/chat");
+  }
+
+  async function handleLogin(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: username.trim(), password }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "نام کاربری یا رمز عبور اشتباه است.");
+        return;
+      }
+
+      if (data.needs2FA) {
+        setNeeds2FA(true);
+        setOtp("");
+        return;
+      }
+
+      finishLogin(data);
+    } catch {
+      setError("ارتباط با سرور برقرار نشد.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleVerify2FA(e: React.FormEvent) {
+    e.preventDefault();
+    const code = otp.trim();
+    if (!/^\d{6}$/.test(code)) {
+      setError("کد ۶ رقمی را وارد کنید.");
+      return;
+    }
+
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password, code }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "کد تأیید دو مرحله‌ای اشتباه است.");
+        return;
+      }
+
+      if (data.needs2FA) {
+        setError("کد تأیید دو مرحله‌ای را وارد کنید.");
+        return;
+      }
+
+      finishLogin(data);
+    } catch {
+      setError("ارتباط با سرور برقرار نشد.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function backToPassword() {
+    setNeeds2FA(false);
+    setOtp("");
+    setError("");
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="cpg-bg flex min-h-screen items-center justify-center p-4">
+      {needs2FA ? (
+        <form
+          onSubmit={handleVerify2FA}
+          className="w-full max-w-md rounded-3xl bg-white p-8 shadow-lg"
+        >
+          <div className="mb-8">
+            <BrandMark large subtitle="تأیید دو مرحله‌ای" />
+          </div>
+
+          <p className="mb-6 text-sm leading-7 text-slate-600">
+            کد ۶ رقمی را از اپ Authenticator وارد کنید.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <label className="block text-sm text-slate-600">کد تأیید</label>
+          <input
+            ref={otpRef}
+            value={otp}
+            onChange={(e) =>
+              setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
+            }
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            maxLength={6}
+            dir="ltr"
+            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-center text-2xl tracking-[0.4em]"
+            placeholder="000000"
+          />
+
+          {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-6 w-full rounded-2xl bg-[#0f2744] px-4 py-3 text-white"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {loading ? "در حال بررسی..." : "تأیید کد"}
+          </button>
+          <button
+            type="button"
+            onClick={backToPassword}
+            className="mt-3 w-full rounded-2xl px-4 py-3 text-sm text-slate-500"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            بازگشت
+          </button>
+        </form>
+      ) : (
+        <form
+          onSubmit={handleLogin}
+          className="w-full max-w-md rounded-3xl bg-white p-8 shadow-lg"
+        >
+          <div className="mb-8">
+            <BrandMark large subtitle="دستیار هوشمند سی‌پی‌جی پارس" />
+          </div>
+
+          <label className="block text-sm text-slate-600">نام کاربری</label>
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
+          />
+
+          <label className="mt-4 block text-sm text-slate-600">رمز عبور</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"
+          />
+
+          {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-6 w-full rounded-2xl bg-[#0f2744] px-4 py-3 text-white"
+          >
+            {loading ? "در حال ورود..." : "ورود به سامانه"}
+          </button>
+          <InstallAppButton />
+        </form>
+      )}
+    </main>
   );
 }

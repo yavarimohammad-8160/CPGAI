@@ -1,0 +1,183 @@
+npm notice run cpgai@0.1.0 npx
+npm notice run next start -H 0.0.0.0 -p 3000
+▲ Next.js 16.3.1
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 117ms
+✓ Running next.config.ts took 29ms
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788694.png
+SAVED_FILE /api/media/generated/img-1789977788694.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788695.png
+SAVED_FILE /api/media/generated/img-1789977788695.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788696.png
+SAVED_FILE /api/media/generated/img-1789977788696.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788697.png
+SAVED_FILE /api/media/generated/img-1789977788697.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788698.png
+SAVED_FILE /api/media/generated/img-1789977788698.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788699.png
+SAVED_FILE /api/media/generated/img-1789977788699.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788700.png
+SAVED_FILE /api/media/generated/img-1789977788700.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788701.png
+SAVED_FILE /api/media/generated/img-1789977788701.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788702.png
+SAVED_FILE /api/media/generated/img-1789977788702.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977788702.png
+SAVED_FILE /api/media/generated/img-1789977788702.png true
+MEMORY_INJECT 7 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'image',
+  format: 'image',
+  topic: 'عکس پسرم اینطوری درست کن لباس زرد رنگ تنش و بک گ',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit عکس پسرم رو اینطوری درست کن: لباس زرد رنگ رو تنش کن و بک گراند عکس رو عکس beck_f
+CHAT_PROVIDER avalai image-edit
+IMAGE_COMPOSITE { refs: 4, extra: 3 }
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862698.png
+SAVED_FILE /api/media/generated/img-1789977862698.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862700.png
+SAVED_FILE /api/media/generated/img-1789977862700.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862701.png
+SAVED_FILE /api/media/generated/img-1789977862701.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862702.png
+SAVED_FILE /api/media/generated/img-1789977862702.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862702.png
+SAVED_FILE /api/media/generated/img-1789977862702.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862703.png
+SAVED_FILE /api/media/generated/img-1789977862703.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862703.png
+SAVED_FILE /api/media/generated/img-1789977862703.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862704.png
+SAVED_FILE /api/media/generated/img-1789977862704.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862704.png
+SAVED_FILE /api/media/generated/img-1789977862704.png true
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789977862705.png
+SAVED_FILE /api/media/generated/img-1789977862705.png true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'برات میفرستم مدیریتی اماده برام',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+CHAT_ONCE { deepen: false, web: false, tokens: 4000, stream: true }
+CHAT_PROVIDER sinox t-grok-4.5
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'بررسی کن.',
+  fileName: '',
+  sourceChars: 20501
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: false }
+CHAT_ONCE { deepen: false, web: false, tokens: 4000, stream: true }
+CHAT_PROVIDER sinox t-grok-4.5
+CHAT_FFFD_RETRY
+CHAT_PROVIDER sinox t-grok-4.5
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'میتونی نمودار برام ترسیم کنی',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+CHAT_ONCE { deepen: false, web: false, tokens: 4000, stream: true }
+CHAT_PROVIDER sinox t-grok-4.5
+
+D:\Projects\cpgai>MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'نمودار برام بکش نمدار میله ای دیتاهای داخل پروژه',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: true, edit: false }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'generate' }
+IMAGE_PATH generate یه نمودار برام بکش نمدار میله ای از دیتاهای داخل پروژه
+CHAT_PROVIDER avalai image-generate
+IMAGE_SCENES [
+  'Render a finished professional image now. Output an actual picture, not text.\n' +
+    'Follow this user request exactly.\n' +
+    'Do not add steel, mining, Chadormalu, CPG Pars, factories, industrial plants, or company branding unless the user asked for them.\n' +
+    'User request: یه نمودار برام بکش نمدار میله ای از دیتاهای داخل پروژه\n' +
+    'If Persian titles were requested, paint them clearly and sparingly.'
+]
+IMAGE_PROMPT Render a finished professional image now. Output an actual picture, not text.
+Follow this user request exactly.
+Do not add steel, mining, Chadormalu, CPG Pars, factories, industrial plants, or company
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789979276402.png
+SAVED_FILE /api/media/generated/img-1789979276402.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789979276402.png
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'from_source',
+  format: 'xlsx',
+  topic: 'میخوام دوتا ستون دو که اسم و فامیل هست یکی کنم چ',
+  fileName: 'میخوام-دوتا-ستون-دو-که-اسم-و-فامیل-هست-یکی-کنم-چ.xlsx',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+DOC_INTENT {
+  type: 'from_source',
+  format: 'xlsx',
+  topic: 'میخوام دوتا ستون دو که اسم و فامیل هست یکی کنم چ',
+  fileName: 'میخوام-دوتا-ستون-دو-که-اسم-و-فامیل-هست-یکی-کنم-چ.xlsx',
+  sourceChars: 0
+}
+FILE_TEXT_PROVIDER sinox
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_TEXT_PROVIDER sinox
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_EXISTS true D:\Projects\cpgai\public\outputs\میخوام-دوتا-ستون-دو-که-اسم-و-فامیل-هست-یکی-کنم-چ.xlsx
+SAVED_FILE /api/media/outputs/%D9%85%DB%8C%D8%AE%D9%88%D8%A7%D9%85-%D8%AF%D9%88%D8%AA%D8%A7-%D8%B3%D8%AA%D9%88%D9%86-%D8%AF%D9%88-%DA%A9%D9%87-%D8%A7%D8%B3%D9%85-%D9%88-%D9%81%D8%A7%D9%85%DB%8C%D9%84-%D9%87%D8%B3%D8%AA-%DB%8C%DA%A9%DB%8C-%DA%A9%D9%86%D9%85-%DA%86.xlsx true
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'chat',
+  format: 'chat',
+  topic: 'متنی توضیح',
+  fileName: '',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: true, generate: false, edit: true }
+IMAGE_MULTI { count: 1, hasLastImage: true, path: 'edit' }
+IMAGE_PATH edit متنی توضیح بده
+CHAT_PROVIDER avalai image-edit
+FILE_EXISTS true D:\Projects\cpgai\public\generated\img-1789979683114.png
+SAVED_FILE /api/media/generated/img-1789979683114.png true
+IMAGE_URL_RETURNED /api/media/generated/img-1789979683114.png
+MEMORY_INJECT 5 { saved: false, memKind: null }
+DOC_INTENT {
+  type: 'from_source',
+  format: 'xlsx',
+  topic: 'نمداری که دادیو بهم',
+  fileName: 'نمداری-که-دادیو-بهم.xlsx',
+  sourceChars: 0
+}
+IMAGE_GATE { lastImage: false, generate: false, edit: false }
+DOC_INTENT {
+  type: 'from_source',
+  format: 'xlsx',
+  topic: 'نمداری که دادیو بهم',
+  fileName: 'نمداری-که-دادیو-بهم.xlsx',
+  sourceChars: 0
+}
+FILE_TEXT_PROVIDER sinox
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_TEXT_PROVIDER sinox
+CHAT_PROVIDER sinox t-grok-4.5
+FILE_EXISTS true D:\Projects\cpgai\public\outputs\نمداری-که-دادیو-بهم.xlsx
+SAVED_FILE /api/media/outputs/%D9%86%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%DA%A9%D9%87-%D8%AF%D8%A7%D8%AF%DB%8C%D9%88-%D8%A8%D9%87%D9%85.xlsx true

@@ -1,0 +1,226 @@
+{
+  "runs": [
+    {
+      "at": "2026-09-20T05:04:34.392Z",
+      "by": "admin-api",
+      "due": false,
+      "searched": 10,
+      "applied": [
+        {
+          "company": "گل‌گهر",
+          "product": "concentrate",
+          "year": "1404",
+          "from": null,
+          "to": 15140000,
+          "source": "https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B4%D8%B1%DA%A9%D8%AA-%D9%87%D8%A7-104/3752976-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D9%86-%DA%A9%D9%86%D8%B3%D8%A7%D9%86%D8%AA%D8%B1%D9%87-%D8%B3%D9%86%DA%AF-%D8%A2%D9%87%D9%86-%D8%AA%D9%88%D8%B3%D8%B7-%DA%AF%D9%84-%DA%AF%D9%87%D8%B1 | تولید ۱۵ میلیون تن کنسانتره سنگ‌آهن توسط «گل‌گهر | ۱۵ میلیون و ۱۴۰ هزار",
+          "action": "add-year",
+          "reason": "سال جدید با منبع معتبر اضافه شد"
+        },
+        {
+          "company": "گل‌گهر",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": 7600000,
+          "source": "https://www.mehrnews.com/news/6622478/%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF-%D8%B4%D8%B1%DA%A9%D8%AA-%D9%87%D8%A7%DB%8C-%DA%AF%D8%B1%D9%88%D9%87-%D8%B3%D9%86%DA%AF-%D8%A2%D9%87%D9%86-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86 | گزارش جامع عملکرد شرکت‌های گروه سنگ‌ آهن در بازار سرمایه ایران | ۷.۶ میلیون",
+          "action": "add-year",
+          "reason": "سال جدید با منبع معتبر اضافه شد"
+        }
+      ],
+      "skipped": [
+        {
+          "company": "چادرملو",
+          "product": "concentrate",
+          "year": "1405",
+          "from": null,
+          "to": 10000000,
+          "source": "https://mmdic.ir/?page_id=11721 | شرکت معدنی و صنعتی چادرملو | ۱۰ میلیون",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        },
+        {
+          "company": "چادرملو",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": 4000000,
+          "source": "https://fa.wikipedia.org/wiki/%D8%B4%D8%B1%DA%A9%D8%AA_%D9%85%D8%B9%D8%AF%D9%86%DB%8C_%D9%88_%D8%B5%D9%86%D8%B9%D8%AA%DB%8C_%DA%86%D8%A7%D8%AF%D8%B1%D9%85%D9%84%D9%88 | شرکت معدنی و صنعتی چادرملو | ۳/۴ میلیون",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        },
+        {
+          "company": "چادرملو",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://enfnews.ir/17574/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D9%88-%D8%A2%D9%87%D9%86-%D8%A7%D8%B3%D9%81%D9%86%D8%AC%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%84-%DB%B1%DB%B4/ | تولید فولاد و آهن اسفنجی ایران در سال ۱۴۰۲ به بالاترین میزان ... | ۳۱ میلیون و ۵۵۹ هزار",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "چادرملو",
+          "product": "billet",
+          "year": "1403",
+          "from": null,
+          "to": null,
+          "source": "https://www.karkhanedar.com/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-56-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AA%D9%86-%D8%B4%D9%85%D8%B4-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D8%B7%DB%8C/ | تولید بیش از 56 هزار تن شمش آلومینیوم طی ماه نخست 1403 | 56 هزار تن",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد مبارکه",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": 17500000,
+          "source": "https://www.msc.ir/fa-IR/Portal/1/news/view/17757/5719/Staging/mobarakehsteel_co | افزایش میزان تولید سالانه گروه فولاد مباركه در سال ۱۴۰۴ ... | ۱۷.۵ میلیون",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        },
+        {
+          "company": "فولاد مبارکه",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://enfnews.ir/17574/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D9%88-%D8%A2%D9%87%D9%86-%D8%A7%D8%B3%D9%81%D9%86%D8%AC%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%84-%DB%B1%DB%B4/ | تولید فولاد و آهن اسفنجی ایران در سال ۱۴۰۲ به بالاترین میزان ... | ۳۱ میلیون و ۵۵۹ هزار",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد خوزستان",
+          "product": "dri",
+          "year": "1405",
+          "from": null,
+          "to": null,
+          "source": "https://www.donyayemadan.com/%D8%A8%D8%AE%D8%B4-%D9%81%D9%88%D9%84%D8%A7%D8%AF-26/273406-%D8%AB%D8%A8%D8%AA-%D8%B1%DA%A9%D9%88%D8%B1%D8%AF-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A2%D9%87%D9%86-%D8%A7%D8%B3%D9%81%D9%86%D8%AC%DB%8C-%D8%AF%D8%B1-%D8%B4%D8%B1%DA%A9%D8%AA-%D8%A2%D9%87%D9%86-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D8%A7%D8%B1%D9%81%D8%B9 | ثبت رکورد جدید تولید آهن اسفنجی در شرکت آهن و فولاد ارفع | ۱۱۱هزار",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد خوزستان",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://esfahanahan.com/mag/sponge-iron-export-guide | آمار صادرات آهن اسفنجی در سال 1402 + راهنمای اجرایی | ۳۱۴۶۶ هزار تن",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        }
+      ],
+      "note": "2 فیلد با منبع معتبر به‌روز شد."
+    },
+    {
+      "at": "2026-09-01T10:46:06.897Z",
+      "by": "admin-api",
+      "due": false,
+      "searched": 10,
+      "applied": [
+        {
+          "company": "چادرملو",
+          "product": "concentrate",
+          "year": "1404",
+          "from": null,
+          "to": 500000,
+          "source": "https://www.isna.ir/news/95031106548/%D8%AA%D9%88%D9%84%DB%8C%D8%AF-1-5-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D9%86-%DA%A9%D9%86%D8%B3%D8%A7%D9%86%D8%AA%D8%B1%D9%87-%D8%B3%D9%86%DA%AF-%D8%A2%D9%87%D9%86-%D8%AF%D8%B1-%D9%85%D8%B9%D8%AF%D9%86-%DA%86%D8%A7%D8%AF%D8%B1%D9%85%D9%84%D9%88 | تولید 1.5 میلیون تن کنسانتره سنگ‌آهن در معدن چادرملو | 500 هزار تن",
+          "action": "add-year",
+          "reason": "سال جدید با منبع معتبر اضافه شد"
+        }
+      ],
+      "skipped": [
+        {
+          "company": "چادرملو",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": null,
+          "source": "https://ahanmadan.com/product/%DA%AF%D9%86%D8%AF%D9%84%D9%87-%D8%B3%D9%86%DA%AF-%D8%A2%D9%87%D9%86-%DA%86%D8%A7%D8%AF%D8%B1%D9%85%D9%84%D9%88/ | گندله سنگ‌آهن چادرملو | خرید، آنالیز شیمیایی و قیمت روز | ۶۶ درصد",
+          "action": "skip",
+          "reason": "رقم تولید واقعی قابل اعتماد استخراج نشد"
+        },
+        {
+          "company": "چادرملو",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://esfahanahan.com/mag/sponge-iron-export-guide/ | آمار صادرات آهن اسفنجی در سال ۱۴۰۲ + راهنمای اجرایی | ۳۱۴۶۶ هزار تن",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "چادرملو",
+          "product": "billet",
+          "year": "1405",
+          "from": null,
+          "to": null,
+          "source": "https://www.instagram.com/p/DakUkx8sLpL/ | تولید بیش از ۵۶۳ هزار تن فولاد در چادرملو تا پایان خردادماه | 21,066",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد مبارکه",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": 2900000,
+          "source": "https://ahangar.com/mag/%DA%A9%D8%A7%D8%B1%D8%AE%D8%A7%D9%86%D9%87-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%DA%A9%D9%87/ | کارخانه فولاد مبارکه | از معرفی کارخانه و خط تولید تا محصولات | ۲.۹ میلیون",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        },
+        {
+          "company": "فولاد مبارکه",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://esfahanahan.com/mag/sponge-iron-export-guide/ | آمار صادرات آهن اسفنجی در سال ۱۴۰۲ + راهنمای اجرایی | ۳۱۴۶۶ هزار تن",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد خوزستان",
+          "product": "dri",
+          "year": "1402",
+          "from": null,
+          "to": null,
+          "source": "https://esfahanahan.com/mag/sponge-iron-export-guide/ | آمار صادرات آهن اسفنجی در سال ۱۴۰۲ + راهنمای اجرایی | ۳۱۴۶۶ هزار تن",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "فولاد خوزستان",
+          "product": "dri",
+          "year": "1405",
+          "from": null,
+          "to": null,
+          "source": "https://www.donyayemadan.com/%D8%A8%D8%AE%D8%B4-%D9%81%D9%88%D9%84%D8%A7%D8%AF-26/273406-%D8%AB%D8%A8%D8%AA-%D8%B1%DA%A9%D9%88%D8%B1%D8%AF-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A2%D9%87%D9%86-%D8%A7%D8%B3%D9%81%D9%86%D8%AC%DB%8C-%D8%AF%D8%B1-%D8%B4%D8%B1%DA%A9%D8%AA-%D8%A2%D9%87%D9%86-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D8%A7%D8%B1%D9%81%D8%B9 | ثبت رکورد جدید تولید آهن اسفنجی در شرکت آهن و فولاد ارفع | ۱۱۱هزار",
+          "action": "skip",
+          "reason": "سال اسنیپت با سال هدف یکی نیست؛ رقم به سال دیگر نسبت داده نشد"
+        },
+        {
+          "company": "گل‌گهر",
+          "product": "concentrate",
+          "year": "1404",
+          "from": null,
+          "to": 22069000,
+          "source": "https://pardazeshnews.ir/pardazeshnews-4425/ | طی پنجمین ماه ۱۴۰۴: تولید کنسانتره آهن شرکت‌های بزرگ کشور | ۲۲ میلیون و ۶۹ هزار",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        },
+        {
+          "company": "گل‌گهر",
+          "product": "pellet",
+          "year": "1404",
+          "from": null,
+          "to": 6980000,
+          "source": "https://www.instagram.com/p/DPUGjQPDA6k/ | 🔴 تولید و فروش چشمگیر گل گهر در شش ماهه اول سال 🔹 شرکت ... | ۶ میلیون و ۹۸۰ هزار",
+          "action": "skip",
+          "reason": "منبع معتبر نیست"
+        }
+      ],
+      "note": "1 فیلد با منبع معتبر به‌روز شد."
+    }
+  ]
+}
