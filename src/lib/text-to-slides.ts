@@ -27,7 +27,7 @@ export function isJunkSlideTitle(title: string) {
 export function userAskOnly(text: string) {
   return String(text || "")
     .split(
-      /\n(?:نام فایل:|محتوای فایل:|فایل خوانده شد|متن تصویر خوانده شد|متن استخراج‌شده از تصویر:|محتوای اصلی برای تبدیل به پاورپوینت)/
+      /\n(?:نام فایل:|محتوای فایل:|--- فایل:|فایل خوانده شد|متن تصویر خوانده شد|متن استخراج‌شده از تصویر:|محتوای اصلی برای تبدیل به پاورپوینت)/
     )[0]
     .trim();
 }
@@ -35,7 +35,7 @@ export function userAskOnly(text: string) {
 export function sourceTextOnly(text: string) {
   const raw = String(text || "").replace(/\r/g, "");
   const chunks = raw.split(
-    /محتوای فایل:|متن از صفحات اسکن‌شده:|متن استخراج‌شده از تصویر:|متن فایل Word قبلی:|محتوای اصلی برای تبدیل به پاورپوینت[^\n]*\n?/
+    /محتوای فایل:|--- فایل:[^\n]*---|متن از صفحات اسکن‌شده:|متن استخراج‌شده از تصویر:|متن فایل Word قبلی:|محتوای اصلی برای تبدیل به پاورپوینت[^\n]*\n?/
   );
   if (chunks.length < 2) return "";
   return chunks

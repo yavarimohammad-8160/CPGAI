@@ -16,6 +16,7 @@ import { BrandMark } from "@/components/brand-mark";
 import { InstallAppButton } from "@/components/install-app";
 import { ChatRichText } from "@/components/chat-rich-text";
 import { isImageEditAsk, isImageWorkAsk } from "@/lib/image-work";
+import { packFileSources } from "@/lib/file-pack";
 
 type PendingFile = {
   name: string;
@@ -102,7 +103,7 @@ function emptyDraft(): ComposerDraft {
   };
 }
 
-const MAX_IMAGES = 5;
+const MAX_IMAGES = 8;
 
 type SpeechRec = {
   lang: string;
@@ -517,6 +518,14 @@ function visibleUserContent(msg: Message) {
 
 function userAttachment(msg: Message) {
   if (msg.role !== "user") return { name: "", status: "" };
+  const fileRows = Array.isArray(msg.files) ? msg.files : [];
+  if (fileRows.length) {
+    const names = fileRows.map((row) => row.name).filter(Boolean);
+    return {
+      name: names.join("، "),
+      status: READ_OK_NOTE,
+    };
+  }
   if (msg.attachedName) {
     return {
       name: msg.attachedName,
@@ -530,19 +539,23 @@ function userAttachment(msg: Message) {
 function apiUserContent(msg: Message) {
   if (msg.role !== "user") return msg.content;
   const fileRows = Array.isArray(msg.files) ? msg.files : [];
-  if (msg.sourceText || msg.attachedName || fileRows.length) {
+  if (fileRows.length) {
+    const ask =
+      (msg.content || "").trim() ||
+      (fileRows.length > 1 ? "این فایل‌ها را بررسی کن." : "این فایل را بررسی کن.");
+    const packed = packFileSources(fileRows);
+    const parts = [ask];
+    if (packed.dump) parts.push("", "محتوای فایل:", packed.dump);
+    if (packed.failed.length) {
+      parts.push("", "این فایل‌ها خوانده نشد: " + packed.failed.join("، ") + ".");
+    }
+    return parts.join("\n");
+  }
+  if (msg.sourceText || msg.attachedName) {
     const ask = (msg.content || "").trim() || "این فایل را بررسی کن.";
     const parts = [ask, ""];
     if (msg.attachedName) parts.push("نام فایل: " + msg.attachedName);
-    if (msg.attachedStatus) parts.push(msg.attachedStatus);
-    if (msg.sourceText) {
-      parts.push("محتوای فایل:", msg.sourceText);
-    } else {
-      for (const row of fileRows) {
-        if (row.name) parts.push("نام فایل: " + row.name);
-        if (row.text) parts.push("محتوای فایل:", row.text);
-      }
-    }
+    if (msg.sourceText) parts.push("محتوای فایل:", msg.sourceText);
     return parts.filter((part, i) => i < 2 || part).join("\n");
   }
   return msg.content;
@@ -873,6 +886,9 @@ export default function ChatPage() {
   const fileBusy = attachItems.some(
     (item) => item.status === "preparing" || item.status === "reading"
   );
+  const readingCount = attachItems.filter(
+    (item) => item.status === "preparing" || item.status === "reading"
+  ).length;
   const loading = !!conversationId && !!pendingIds[conversationId];
 
   async function loadQuota() {
@@ -1598,42 +1614,46 @@ export default function ChatPage() {
     setAttachItems((prev) => [...prev, ...created]);
     for (const item of created) logFileStatus(item.name, "preparing");
 
-    for (let i = 0; i < docFiles.length; i += 1) {
-      const file = docFiles[i];
-      const item = created[i];
-      const timer = startSlowTimer(item.id, item.name);
-      try {
-        patchAttach(item.id, { status: "reading" });
-        logFileStatus(item.name, "reading");
-        const result = await extractOneFile(file);
-        window.clearTimeout(timer);
-        if (!stillHasAttach(item.id)) continue;
-        if (!result.ok) {
+    const extracted = await Promise.all(
+      docFiles.map(async (file, i) => {
+        const item = created[i];
+        const timer = startSlowTimer(item.id, item.name);
+        try {
+          patchAttach(item.id, { status: "reading" });
+          logFileStatus(item.name, "reading");
+          const result = await extractOneFile(file);
+          window.clearTimeout(timer);
+          if (!stillHasAttach(item.id)) return null;
+          if (!result.ok) {
+            patchAttach(item.id, {
+              status: "error",
+              error: result.error,
+              slow: false,
+            });
+            logFileStatus(item.name, "error");
+            return null;
+          }
+          patchAttach(item.id, {
+            status: "ready",
+            pending: result.pending,
+            slow: false,
+          });
+          logFileStatus(item.name, "ready");
+          return result.pending;
+        } catch {
+          window.clearTimeout(timer);
           patchAttach(item.id, {
             status: "error",
-            error: result.error,
+            error: "خواندن فایل ناموفق بود.",
             slow: false,
           });
           logFileStatus(item.name, "error");
-          continue;
+          return null;
         }
-        patchAttach(item.id, {
-          status: "ready",
-          pending: result.pending,
-          slow: false,
-        });
-        logFileStatus(item.name, "ready");
-        setFiles((prev) => [...prev, result.pending]);
-      } catch {
-        window.clearTimeout(timer);
-        patchAttach(item.id, {
-          status: "error",
-          error: "خواندن فایل ناموفق بود.",
-          slow: false,
-        });
-        logFileStatus(item.name, "error");
-      }
-    }
+      })
+    );
+    const ok = extracted.filter(Boolean) as PendingFile[];
+    if (ok.length) setFiles((prev) => [...prev, ...ok]);
   }
 
   function speak(text: string) {
@@ -1878,17 +1898,31 @@ export default function ChatPage() {
       role: "user",
       content:
         text ||
-        (images.length && !files.length ? "این عکس را بررسی کن." : ""),
+        (files.length > 1
+          ? "این فایل‌ها را بررسی کن."
+          : files.length
+            ? "این فایل را بررسی کن."
+            : images.length
+              ? "این عکس را بررسی کن."
+              : ""),
       image: images[0] || undefined,
       images: images.length ? images : undefined,
-      files: files.map((row) => ({
-        name: row.name,
-        type: row.type,
-        text: row.text,
-      })),
-      attachedName: firstFile?.name,
+      files: [
+        ...files.map((row) => ({
+          name: row.name,
+          type: row.type,
+          text: row.text,
+        })),
+        ...attachItems
+          .filter((item) => item.kind === "file" && item.status === "error")
+          .map((item) => ({
+            name: item.name,
+            type: item.type || "",
+            text: "",
+          })),
+      ],
+      attachedName: files.map((row) => row.name).filter(Boolean).join("، ") || firstFile?.name,
       attachedStatus: attachedStatus || undefined,
-      sourceText: files.map((row) => row.text).filter(Boolean).join("\n\n") || undefined,
     };
     const history = active?.messages?.length ? active.messages : [];
     const nextMessages = [...history, userMessage];
@@ -2395,6 +2429,12 @@ export default function ChatPage() {
 
             <div ref={bottomRef} />
           </section>
+
+          {readingCount > 0 ? (
+            <p className="mt-3 shrink-0 text-sm text-slate-500">
+              در حال خواندن {readingCount.toLocaleString("fa-IR")} فایل
+            </p>
+          ) : null}
 
           {attachItems.length > 0 && (
             <div className="mt-3 flex shrink-0 flex-wrap items-start gap-3">

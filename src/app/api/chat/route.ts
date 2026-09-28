@@ -49,6 +49,7 @@ import {
   type FileKind,
 } from "@/lib/office";
 import { wantsFileOutput } from "@/lib/intent";
+import { packFileSources } from "@/lib/file-pack";
 import {
   collectPresentationInput,
   harvestSourceFacts,
@@ -1197,19 +1198,9 @@ function lastUserFileDump(messages: IncomingMessage[]) {
     const c = String(msg.content || "");
     if (/محتوای فایل:/.test(c) && c.length > 80) return c;
     const files = Array.isArray(msg.files) ? msg.files : [];
-    const texts = files
-      .map((row) => String(row.text || "").trim())
-      .filter(Boolean)
-      .join("\n\n");
-    if (texts.length > 40) {
-      return [
-        c,
-        files[0]?.name ? "نام فایل: " + files[0].name : "",
-        "محتوای فایل:",
-        texts,
-      ]
-        .filter(Boolean)
-        .join("\n");
+    const packed = packFileSources(files);
+    if (packed.dump.length > 40) {
+      return [c, "محتوای فایل:", packed.dump].filter(Boolean).join("\n");
     }
   }
   return "";
@@ -2733,15 +2724,24 @@ export async function POST(req: NextRequest) {
     const username = canonUsername(
       req.headers.get("x-cpgai-user") || String(body.username || "")
     );
+    let unreadFiles: string[] = [];
+    function withUnreadNote<T extends { text?: string }>(payload: T): T {
+      if (!unreadFiles.length) return payload;
+      const note = "این فایل‌ها خوانده نشد: " + unreadFiles.join("، ") + ".";
+      const t = String(payload.text || "");
+      if (!t || t.includes(note)) return payload;
+      return { ...payload, text: t.trimEnd() + "\n" + note };
+    }
     function respond(payload: object, init?: { status: number }) {
+      const next = withUnreadNote(payload as { text?: string });
       if (!init || init.status === 200) {
         try {
-          logUsageIfSuccess(username, payload);
+          logUsageIfSuccess(username, next);
         } catch (err) {
           console.log("USAGE_LOG_FAIL", err);
         }
       }
-      return NextResponse.json(payload, init);
+      return NextResponse.json(next, init);
     }
 
     if (!textClient) {
@@ -2771,17 +2771,27 @@ export async function POST(req: NextRequest) {
     const last = messages[messages.length - 1] || {};
     let lastText = last.content || "";
     if (Array.isArray(last.files) && last.files.length) {
-      const fileBits = last.files
-        .filter((row) => row?.name || row?.text)
-        .map((row) =>
-          ["نام فایل: " + (row.name || ""), row.text ? "محتوای فایل:\n" + row.text : ""]
-            .filter(Boolean)
-            .join("\n")
-        );
-      if (fileBits.length && !/محتوای فایل:/.test(lastText)) {
-        lastText = [lastText || "این فایل را بررسی کن.", "", ...fileBits].join("\n");
-        last.content = lastText;
+      const packed = packFileSources(last.files);
+      unreadFiles = packed.failed;
+      console.log("FILES_READ", {
+        count: packed.count,
+        names: packed.names,
+        charsEach: packed.charsEach,
+        failed: packed.failed,
+      });
+      const ask =
+        userAskOnly(lastText).trim() ||
+        (packed.count > 1
+          ? "این فایل‌ها را بررسی کن."
+          : "این فایل را بررسی کن.");
+      lastText = packed.dump
+        ? ask + "\n\nمحتوای فایل:\n" + packed.dump
+        : ask;
+      if (packed.failed.length) {
+        lastText +=
+          "\n\nاین فایل‌ها خوانده نشد: " + packed.failed.join("، ") + ".";
       }
+      last.content = lastText;
     }
     const lastImagesNow = collectMessageImages(last);
     const memories = listMemories(username);
@@ -2913,7 +2923,7 @@ export async function POST(req: NextRequest) {
                 send({ text: chunk });
               });
             }
-            const payload = { text: finalText || full };
+            const payload = withUnreadNote({ text: finalText || full });
             try {
               logUsageIfSuccess(username, payload);
             } catch (err) {
@@ -3163,7 +3173,10 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const visionImages = lastImagesNow.slice(0, 5);
+    const visionImages =
+      lastImagesNow.length > 0
+        ? lastImagesNow.slice(0, 8)
+        : findLastUserImages(messages).slice(0, 8);
     const fileDumpWeak =
       /این PDF اسکن است و متن صفحه کافی استخراج نشد|بخشی از متن فایل خوانا نبود/.test(
         lastText

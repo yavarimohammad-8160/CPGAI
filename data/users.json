@@ -36,7 +36,7 @@
     "active": true,
     "twoFactorEnabled": false,
     "twoFactorSecret": null,
-    "monthly_token_limit": 300000,
+    "monthly_token_limit": 10000000,
     "monthly_image_limit": 30,
     "monthly_file_limit": 40,
     "limits_enabled": true
